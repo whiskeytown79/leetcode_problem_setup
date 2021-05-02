@@ -29,7 +29,7 @@ class Request:
     #   --compressed
 
     def serialize(self):
-        nl = '\\\\n'
+        nl = '\\n'
         output = '{'
         output += '"operationName":"questionData",'
         output += f'"variables":{{"titleSlug":"{self.title_slug}"}},'

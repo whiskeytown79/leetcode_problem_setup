@@ -34,7 +34,7 @@ if r.status_code == 200:
         cookies[csrf_token_key] = csrf_token
     print(cookies)
     headers = dict()
-    headers["Content-Type"] = "application/graphql"
+    headers["Content-Type"] = "application/json"
     headers["Referer"] = description_url
     if csrf_token is not None:
         headers["x-csrftoken"] = csrf_token
