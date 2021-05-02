@@ -2,13 +2,24 @@
 
 class Request:
     """
-    Initializes the request with the given title slug (e.g. "two-sum")
+    Represents a GraphQL request for a question to the Leetcode GraphQL API.
+    TODO: Refactor this to separate the concern of "a graphql request" from the specifics
+    of the "question" request type.
     """
     def __init__(self, title_slug, fields):
+        """
+        Initializes the request with the given title slug (e.g. "two-sum")
+        """
         self.title_slug = title_slug
         self.fields = fields
 
     def serialize(self) -> str:
+        """
+        Serializes the request to JSON.
+        TODO: return an actual json object instead of string reprsentation?
+
+        :return: a string of JSON representing the request
+        """
         nl = '\\n'
         output = '{'
         output += '"operationName":"questionData",'

@@ -1,4 +1,4 @@
-from leetcode.graphql.field import Field, CodeSnippets
+from leetcode.graphql.question_fields import QuestionFields, CodeSnippets
 from leetcode.graphql.request import Request
 import json
 import requests
@@ -6,12 +6,12 @@ import requests
 title_slug = "two-sum"
 
 graphql_request = Request(title_slug, fields=[
-            Field.questionId,
-            Field.questionFrontendId,
-            Field.title,
-            Field.boundTopicId,
-            Field.titleSlug,
-            Field.content,
+            QuestionFields.questionId,
+            QuestionFields.questionFrontendId,
+            QuestionFields.title,
+            QuestionFields.boundTopicId,
+            QuestionFields.titleSlug,
+            QuestionFields.content,
             CodeSnippets(fields=[
                 CodeSnippets.Field.lang,
                 CodeSnippets.Field.langSlug,
