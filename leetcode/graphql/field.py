@@ -1,17 +1,7 @@
 from enum import Enum, auto
 
-
-class BaseField:
-    def get_name(self):
-        return None
-
-    def get_fields(self):
-        return None
-
-
-class SimpleField(BaseField, Enum):
-    def get_name(self):
-        return self._name_
+from leetcode.graphql.compound_field import CompoundField
+from leetcode.graphql.simple_field import SimpleField
 
 
 class Field(SimpleField, Enum):
@@ -46,20 +36,6 @@ class Field(SimpleField, Enum):
     libraryUrl = auto(),
     adminUrl = auto(),
     __typename = auto()
-
-
-class CompoundField(BaseField):
-    def __init__(self, name, fields=None):
-        self.name = name
-        if fields is None:
-            fields = list()
-        self.fields = fields
-
-    def get_name(self):
-        return self.name
-
-    def get_fields(self):
-        return self.fields
 
 
 class Contributors(CompoundField):
