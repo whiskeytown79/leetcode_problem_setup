@@ -3,21 +3,22 @@ from leetcode.graphql.request import Request
 import json
 import requests
 
-title_slug = "two-sum"
+# title_slug = "shortest-word-distance"  # Paid-only question
+title_slug = "two-sum"  # Free question
 
 graphql_request = Request(title_slug, fields=[
-            QuestionFields.questionId,
-            QuestionFields.questionFrontendId,
-            QuestionFields.title,
-            QuestionFields.boundTopicId,
-            QuestionFields.titleSlug,
-            QuestionFields.content,
-            CodeSnippets(fields=[
-                CodeSnippets.Field.lang,
-                CodeSnippets.Field.langSlug,
-                CodeSnippets.Field.code
-            ])
-        ])
+    QuestionFields.questionId,
+    QuestionFields.questionFrontendId,
+    QuestionFields.title,
+    QuestionFields.titleSlug,
+    QuestionFields.isPaidOnly,
+    QuestionFields.content,
+    CodeSnippets(fields=[
+        CodeSnippets.Field.lang,
+        CodeSnippets.Field.langSlug,
+        CodeSnippets.Field.code
+    ])
+])
 
 query_text = graphql_request.serialize()
 query_json = json.loads(query_text)
