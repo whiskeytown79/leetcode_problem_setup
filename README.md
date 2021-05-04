@@ -1,8 +1,12 @@
 # leetcode_problem_setup
 
-Setting up local python environment, making sure to use `python3`
-to create the virtualenv. After activating, future `python` commands
-should use that version of Python by default.
+## Requirements
+
+* Python 3
+
+## Setting up
+
+### Linux, MacOS, Unix-like systems, etc.
 
 ```
 python3 -m venv .venv
@@ -11,7 +15,7 @@ python -m pip install -r requirements.txt
 python main.py
 ```
 
-For Windows:
+### Windows
 
 ```
 py -m venv .venv
